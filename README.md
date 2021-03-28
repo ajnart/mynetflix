@@ -57,12 +57,11 @@ Nous allons maintenant configurer les services pour qu'ils communiquent entre eu
 Rendez vous sur l'ip assignée à Jackett pour commencer. http://localhost:9117/UI/Dashboard
 
 Appuyez sur le boutton add indexer et ajoutez le/les indexers de votre choix.
-![](assets/addindexer.png)
 
 Ensuite, suivez les instruction dans "*Adding a Jackett indexer in Sonarr or Radarr*"
 
-Dans le field **URL** sur Sonarr et Radarr, utilisez le format suivant :
-``http://{nom docker jackett}:{port jackett}/api/v2.0/indexers/all/results/torznab``
+Dans le field **URL** sur Sonarr et Radarr, utilisez le format suivant :  
+``http://{nom docker jackett}:{port jackett}/api/v2.0/indexers/all/results/torznab``  
 dans mon cas:
 ``http://jackett:9117/api/v2.0/indexers/all/results/torznab``
 Comme les dockers sont installés dans le même virtual network, on peut utiliser le hostname des conteneurs pour y accéder depuis un conteneur sur le même network
