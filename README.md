@@ -17,3 +17,23 @@ Ce workshop est divisé en deux parties:
 **Docker Compose** est un outil qui permet de décrire (dans un fichier YAML) et gérer (en ligne de commande) plusieurs conteneurs comme un ensemble de services inter-connectés.
 
 Installez Compose si ce n'est pas déjà fait à l'aide du [tuto linuxserver](https://docs.linuxserver.io/general/docker-compose)
+
+Vous pouvez maintenant télécharger les images que nous allons utiliser à l'aide de ``docker-compose pull``
+
+### Partie 2 : Configuration de docker compose
+Comme vous pouvez le voir dans le fichier ``docker-compose.yml`` mis à votre disposition dans dans le repo, il manque des paramètres pour permettre l'execution des conteneurs.
+
+Pour corriger ça, mettez en place la configration recommandée grâce aux liens suivants:
+
+[linuxserver/plex](https://docs.linuxserver.io/images/docker-plex)
+
+[linuxserver/transmission](https://docs.linuxserver.io/images/docker-transmission)
+
+[linuxserver/radarr](https://docs.linuxserver.io/images/docker-radarr)
+
+[linuxserver/sonarr](https://docs.linuxserver.io/images/docker-sonarr)
+
+[linuxserver/jackett](https://docs.linuxserver.io/images/docker-jackett)
+
+
+**Rensignez des chemins / volumes valides.**
