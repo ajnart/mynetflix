@@ -1,18 +1,10 @@
 ![](assets/mynetflix.png)
 
-# Workshop MyNetflix part. 2
+# MyNetflix
 
-### *Ce workshop a pour but d'automatiser le téléchargement de séries / films dès leur sortie.*
+### *Ce projet a pour but de vous apprendre à automatiser le téléchargement de séries / films dès leur sortie et d'y avoir accès en local ou depuis internet. Un peu comme Netflix.*
 
-### **N'hésitez pas à star ⭐ ce repo si vous avez aimé le workshop!** ![](https://img.shields.io/github/stars/ajnart/mynetflix-part2?label=%E2%AD%90&style=for-the-badge?branch=master&kill_cache=1")
-
-Ce workshop est divisé en deux parties:  
-1️⃣ La première concerne l'installation d'un conteneur Docker portainer; le déploiement d'un serveur de distribution de média Plex et le déploiement d'une interface de téléchargement de torrents grâce à transmission.
-
-2️⃣ La seconde partie concerne la mise en place d'un "stack" via Dokcer-compose pour voir monter de démonter facilement tous nos conteneurs en une seule commande et l'installation de **sonarr/radarr/jackett** pour automatiser le téléchargement de nos médias.
-
-### Cleanup
-⚠ Vous devez d'abord supprimer les conteneurs que vous avez créés durant l'étape précédente. Sinon docker ne pourra pas attribuer les ports nécessaires aux bons services 
+### N'hésitez pas à star ⭐ ce repo si le projet vous plaît ! ![](https://img.shields.io/github/stars/ajnart/mynetflix?label=%E2%AD%90&style=for-the-badge?branch=master&kill_cache=1")
 
 ## Partie 1 : Docker Compose
 ![](assets/docker-compose.jpg)
@@ -30,6 +22,7 @@ Pour corriger ça, mettez en place la configuration recommandée grâce aux lien
 
 | service      | Lien |
 |--------------|------|
+| portainer    | [portainer](https://portainer.readthedocs.io/en/stable/deployment.html#deploy-portainer-via-docker-compose)
 | plex         | [linuxserver/plex](https://docs.linuxserver.io/images/docker-plex)
 | transmission | [linuxserver/transmission](https://docs.linuxserver.io/images/docker-transmission)
 | radarr       | [linuxserver/radarr](https://docs.linuxserver.io/images/docker-radarr)  
@@ -74,10 +67,11 @@ Rendez-vous ensuite dans *Media management* pour rajouter les "Root Folders" /tv
 
 ✨Voilà !✨ Vous n'avez maintenant plus qu'à ajouter des films et des séries et ils seront téléchargés et ajoutés à Plex automatiquement!
 
-### Merci d'avoir suivi ce workshop ! J'espère qu'il vous a plu. Et encore une fois si c'est le cas n'hésitez pas à star le repo, ça fait toujours plaisir 😉
+### Merci d'avoir suivi ce workshop ! J'espère qu'il vous à plu. Si c'est le cas n'hésitez pas à star le repo, ça fait toujours plaisir 😉
 
 ### Aller plus loin:
 - Explorer les paramètres de Sonarr et Radarr pour envoyer des notifications à votre téléphone quand un épisode est téléchargé
 - Changer les paramètres de Plex pour que la synchronisation s'effectue dans le contenu d'un "watched folder" change.
 - Importer des lites de séries / movies à l'aide de la fonction "import list" et d'une liste Trakt
 - Intégrer un VPN à votre setup à l'aide de [wireguard](https://hub.docker.com/r/linuxserver/wireguard) pour pouvoir accéder à distance à Sonarr/Radarr.
+- Intéger transmission à votre navigateur: [addon chrome](https://chrome.google.com/webstore/detail/transmission-easy-client/cmkphjiphbjkffbcbnjiaidnjhahnned?hl=en)
