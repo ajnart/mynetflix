@@ -9,7 +9,7 @@
 https://github.com/ajnart/mynetflix
 
 ## Partie 1 : Docker Compose
-![](https://github.com/ajnart/mynetflix/blob/master/assets/docker-compose.jpg)
+![](assets/docker-compose.jpg)
 
 **Docker Compose** est un outil qui permet de décrire (dans un fichier YAML) et gérer (en ligne de commande) plusieurs conteneurs comme un ensemble de services interconnectés.
 
@@ -33,7 +33,7 @@ Pour corriger ça, mettez en place la configuration recommandée grâce aux lien
 
 **Faites attention à bien renseigner des chemins / volumes valides.**
 
-![](https://github.com/ajnart/mynetflix/blob/master/assets/carbon.png)
+![](assets/carbon.png)
 
 Une fois que tous les services sont mis en place, vous pouvez lancer la stack grâce à ``docker-compose up -d``
 
@@ -43,7 +43,7 @@ Rendez-vous ensuite sur l'interface portainer [localhost:9000](http://localhost:
 
 ✨Voilà !✨ Vous n'avez maintenant plus qu'à configurer les services pour qu'ils fonctionnent entre eux.
 
-![](https://github.com/ajnart/mynetflix/blob/master/assets/portainer.png)
+![](assets/portainer.png)
 
 ## Partie 3: Configuration
 
