@@ -73,3 +73,4 @@ Rendez vous ensuite dans *Media management* pour rajouter les "Root Folders" /tv
 - Changer les paramètres de Plex pour que la synchronisation s'éffectue dans le contennu d'un "watched folder" change.
 - Importer des lites de séries / movies à l'aide de la foncton "import list" et d'une liste Trakt
 - Intégrer un VPN à votre setup à l'aide de [wireguard](https://hub.docker.com/r/linuxserver/wireguard) pour pouvoir accéder à distance à Sonarr/Radarr.
+- Intéger transmission à votre navigateur: [addon chrome](https://chrome.google.com/webstore/detail/transmission-easy-client/cmkphjiphbjkffbcbnjiaidnjhahnned?hl=en)
