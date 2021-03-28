@@ -1,37 +1,77 @@
-## Welcome to GitHub Pages
+![](assets/mynetflix.png)
 
-You can use the [editor on GitHub](https://github.com/ajnart/mynetflix/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+# MyNetflix
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### *Ce projet a pour but de vous apprendre à automatiser le téléchargement de séries / films dès leur sortie et d'y avoir accès en local ou depuis internet. Un peu comme Netflix.*
 
-### Markdown
+### N'hésitez pas à star ⭐ ce repo si le projet vous plaît ! ![](https://img.shields.io/github/stars/ajnart/mynetflix?label=%E2%AD%90&style=for-the-badge?branch=master&kill_cache=1")
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Partie 1 : Docker Compose
+![](assets/docker-compose.jpg)
 
-```markdown
-Syntax highlighted code block
+**Docker Compose** est un outil qui permet de décrire (dans un fichier YAML) et gérer (en ligne de commande) plusieurs conteneurs comme un ensemble de services interconnectés.
 
-# Header 1
-## Header 2
-### Header 3
+Installez Compose si ce n'est pas déjà fait à l'aide du [tuto linuxserver](https://docs.linuxserver.io/general/docker-compose)
 
-- Bulleted
-- List
+Vous pouvez maintenant télécharger les images que nous allons utiliser à l'aide de ``docker-compose pull``
 
-1. Numbered
-2. List
+## Partie 2 : Configuration de docker compose
+Comme vous pouvez le voir dans le fichier ``docker-compose.yml`` mis à votre disposition dans le repo, il manque des paramètres pour permettre l'exécution des conteneurs.
 
-**Bold** and _Italic_ and `Code` text
+Pour corriger ça, mettez en place la configuration recommandée grâce aux liens suivants:
 
-[Link](url) and ![Image](src)
-```
+| service      | Lien |
+|--------------|------|
+| portainer    | [portainer](https://portainer.readthedocs.io/en/stable/deployment.html#deploy-portainer-via-docker-compose)
+| plex         | [linuxserver/plex](https://docs.linuxserver.io/images/docker-plex)
+| transmission | [linuxserver/transmission](https://docs.linuxserver.io/images/docker-transmission)
+| radarr       | [linuxserver/radarr](https://docs.linuxserver.io/images/docker-radarr)  
+| sonarr       | [linuxserver/sonarr](https://docs.linuxserver.io/images/docker-sonarr)
+| jackett      | [linuxserver/jackett](https://docs.linuxserver.io/images/docker-jackett)
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+**Faites attention à bien renseigner des chemins / volumes valides.**
 
-### Jekyll Themes
+![](assets/carbon.png)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ajnart/mynetflix/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Une fois que tous les services sont mis en place, vous pouvez lancer la stack grâce à ``docker-compose up -d``
 
-### Support or Contact
+⚠ Pour allumer et éteindre la stack, utilisez les commandes ``docker-compose start|stop``. *up* ne sert qu'à créer les conteneurs pour la première fois.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Rendez-vous ensuite sur l'interface portainer [localhost:9000](http://localhost:9000) pour confirmer le bon déploiement des conteneurs.
+
+✨Voilà !✨ Vous n'avez maintenant plus qu'à configurer les services pour qu'ils fonctionnent entre eux.
+
+![](assets/portainer.png)
+
+## Partie 3: Configuration
+
+Nous allons maintenant configurer les services pour qu'ils communiquent entre eux.
+
+Rendez-vous sur l'ip assignée à Jackett pour commencer. http://localhost:9117/UI/Dashboard
+
+Appuyez sur le bouton add indexer et ajoutez le/les indexers de votre choix.
+
+Ensuite, suivez les instructions dans "*Adding a Jackett indexer in Sonarr or Radarr*"
+
+Dans le field **URL** sur Sonarr et Radarr, utilisez le format suivant :  
+``http://{nom docker jackett}:{port jackett}/api/v2.0/indexers/all/results/torznab``  
+dans mon cas:
+``http://jackett:9117/api/v2.0/indexers/all/results/torznab``
+Comme les dockers sont installés dans le même virtual network, on peut utiliser le hostname des conteneurs pour y accéder depuis un conteneur sur le même network
+
+Une fois que l'indexeur est en place, rendez-vous dans la section *Download Clients* pour rajouter Transmission comme client de téléchargement.
+
+**Rensigner une catégorie** pour faire en sorte que votre client de téléchargement n'ait pas de problème de conflits.
+
+Rendez-vous ensuite dans *Media management* pour rajouter les "Root Folders" /tv ou /movies que vous avez au préalable montés dans le Docker à l'aide d'un bind/volume.
+
+✨Voilà !✨ Vous n'avez maintenant plus qu'à ajouter des films et des séries et ils seront téléchargés et ajoutés à Plex automatiquement!
+
+### Merci d'avoir suivi ce workshop ! J'espère qu'il vous à plu. Si c'est le cas n'hésitez pas à star le repo, ça fait toujours plaisir 😉
+
+### Aller plus loin:
+- Explorer les paramètres de Sonarr et Radarr pour envoyer des notifications à votre téléphone quand un épisode est téléchargé
+- Changer les paramètres de Plex pour que la synchronisation s'effectue dans le contenu d'un "watched folder" change.
+- Importer des lites de séries / movies à l'aide de la fonction "import list" et d'une liste Trakt
+- Intégrer un VPN à votre setup à l'aide de [wireguard](https://hub.docker.com/r/linuxserver/wireguard) pour pouvoir accéder à distance à Sonarr/Radarr.
+- Intéger transmission à votre navigateur: [addon chrome](https://chrome.google.com/webstore/detail/transmission-easy-client/cmkphjiphbjkffbcbnjiaidnjhahnned?hl=en)
