@@ -4,7 +4,9 @@
 
 ### *Ce projet a pour but de vous apprendre à automatiser le téléchargement de séries / films dès leur sortie et d'y avoir accès en local ou depuis internet. Un peu comme Netflix.*
 
-### N'hésitez pas à star ⭐ ce repo si le projet vous plaît ! ![](https://img.shields.io/github/stars/ajnart/mynetflix?label=%E2%AD%90&style=for-the-badge?branch=master&kill_cache=1")
+### N'hésitez pas à star ⭐ ce repo si le projet vous plaît ! ♥ ![](https://img.shields.io/github/stars/ajnart/mynetflix?label=%E2%AD%90&style=for-the-badge?branch=master&kill_cache=1")
+
+https://github.com/ajnart/mynetflix
 
 ## Partie 1 : Docker Compose
 ![](https://github.com/ajnart/mynetflix/blob/master/assets/docker-compose.jpg)
@@ -35,7 +37,7 @@ Pour corriger ça, mettez en place la configuration recommandée grâce aux lien
 
 Une fois que tous les services sont mis en place, vous pouvez lancer la stack grâce à ``docker-compose up -d``
 
-⚠ Pour allumer et éteindre la stack, utilisez les commandes ``docker-compose start|stop``. *up* ne sert qu'à créer les conteneurs pour la première fois.
+⚠ Pour allumer et éteindre la stack, utilisez les commandes ``docker-compose start|stop``. *Up* ne sert qu'à créer les conteneurs pour la première fois.
 
 Rendez-vous ensuite sur l'interface portainer [localhost:9000](http://localhost:9000) pour confirmer le bon déploiement des conteneurs.
 
