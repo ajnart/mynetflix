@@ -1,0 +1,26 @@
+version: '2'
+services:
+
+  portainer:
+    container_name: portainer
+    image: portainer/portainer-ce
+
+  sonarr:
+    image: linuxserver/sonarr
+    container_name: sonarr
+
+  radarr:
+    image: linuxserver/radarr
+    container_name: radarr
+
+  jackett:
+    image: linuxserver/jackett
+    container_name: jackett
+
+  plex:
+    image: ghcr.io/linuxserver/plex:bionic
+    container_name: plex
+
+  transmission:
+    image: linuxserver/transmission
+    container_name: transmission
