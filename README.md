@@ -2,7 +2,7 @@
 
 # MyNetflix
 
-### *Ce tuto a pour but de vous apprendre à automatiser le téléchargement de séries / films dès leur sortie et d'y avoir accès en local ou depuis internet. Un peu comme Netflix quoi.*
+### *Ce tuto a pour but de vous apprendre à automatiser le téléchargement de séries / films dès leur sortie et d'y avoir accès en local ou depuis internet. Un peu comme Netflix.*
 
 ### **N'hésitez pas à star ⭐ ce repo si le projet vous plaît ! ** ![](https://img.shields.io/github/stars/ajnart/mynetflix-part2?label=%E2%AD%90&style=for-the-badge?branch=master&kill_cache=1")
 
@@ -22,6 +22,7 @@ Pour corriger ça, mettez en place la configuration recommandée grâce aux lien
 
 | service      | Lien |
 |--------------|------|
+| portainer    | [portainer](https://portainer.readthedocs.io/en/stable/deployment.html#deploy-portainer-via-docker-compose)
 | plex         | [linuxserver/plex](https://docs.linuxserver.io/images/docker-plex)
 | transmission | [linuxserver/transmission](https://docs.linuxserver.io/images/docker-transmission)
 | radarr       | [linuxserver/radarr](https://docs.linuxserver.io/images/docker-radarr)  
