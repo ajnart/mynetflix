@@ -2,7 +2,7 @@
 
 # MyNetflix
 
-### *Ce workshop a pour but d'automatiser le téléchargement de séries / films dès leur sortie.*
+### *Ce tuto a pour but de vous apprendre à automatiser le téléchargement de séries / films dès leur sortie et d'y avoir accès en local ou depuis internet. Un peu comme Netflix quoi.*
 
 ### **N'hésitez pas à star ⭐ ce repo si le projet vous plaît ! ** ![](https://img.shields.io/github/stars/ajnart/mynetflix-part2?label=%E2%AD%90&style=for-the-badge?branch=master&kill_cache=1")
 
