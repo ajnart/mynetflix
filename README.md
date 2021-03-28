@@ -4,7 +4,7 @@
 
 ### *Ce projet a pour but de vous apprendre à automatiser le téléchargement de séries / films dès leur sortie et d'y avoir accès en local ou depuis internet. Un peu comme Netflix.*
 
-### N'hésitez pas à star ⭐ ce repo si le projet vous plaît ! ![](https://img.shields.io/github/stars/ajnart/mynetflix-part2?label=%E2%AD%90&style=for-the-badge?branch=master&kill_cache=1")
+### N'hésitez pas à star ⭐ ce repo si le projet vous plaît ! ![](https://img.shields.io/github/stars/ajnart/mynetflix?label=%E2%AD%90&style=for-the-badge?branch=master&kill_cache=1")
 
 ## Partie 1 : Docker Compose
 ![](assets/docker-compose.jpg)
