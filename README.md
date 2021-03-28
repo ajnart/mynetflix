@@ -4,7 +4,7 @@
 
 ### *Ce workshop a pour but d'automatiser le téléchargement de séries / films dès leur sortie.*
 
-### **N'hésitez pas à star ⭐ ce repo si vous avez aimé le workshop!** ![](https://img.shields.io/github/stars/ajnart/mynetflix-part2?label=%E2%AD%90&style=for-the-badge?branch=master&kill_cache=1")
+### **N'hésitez pas à star ⭐ ce repo si le projet vous plaît ! ** ![](https://img.shields.io/github/stars/ajnart/mynetflix-part2?label=%E2%AD%90&style=for-the-badge?branch=master&kill_cache=1")
 
 ## Partie 1 : Docker Compose
 ![](assets/docker-compose.jpg)
@@ -38,7 +38,7 @@ Une fois que tout les services sont mis en place, vous pouvez lancer la stack gr
 
 Rendez-vous ensuite sur l'interface portainer [localhost:9000](http://localhost:9000) pour confirmer le bon déploiement des conteneurs.
 
-✨Voilà !✨ Vous n'avez maintenant plus qu'a configurer les services pour qu'ils fonctionnenent entre eux.
+✨Voilà !✨ Vous n'avez maintenant plus qu'à configurer les services pour qu'ils fonctionnenent entre eux.
 
 ![](assets/portainer.png)
 
@@ -66,7 +66,7 @@ Rendez vous ensuite dans *Media management* pour rajouter les "Root Folders" /tv
 
 ✨Voilà !✨ Vous n'avez maintenant plus qu'à ajouter des films et des séries et ils seront téléchargés et ajoutés à Plex automatiquement!
 
-### Merci d'avoir suivi ce workshop ! J'espère qu'il vous à plu. Et encore une fois si c'est le cas n'hésitez pas à star le repo, ça fait toujours plaisir 😉
+### Merci d'avoir suivi ce workshop ! J'espère qu'il vous à plu. Si c'est le cas n'hésitez pas à star le repo, ça fait toujours plaisir 😉
 
 ### Aller plus loin:
 - Explorez les paramètres de Sonarr et Radarr pour envoyer des notifications à votre téléphone quand un épisode est téléchargé
