@@ -22,8 +22,8 @@ Pour corriger ça, mettez en place la configuration recommandée grâce aux lien
 
 | service      | Lien |
 |--------------|------|
-| portainer    | [portainer](https://portainer.readthedocs.io/en/stable/deployment.html#deploy-portainer-via-docker-compose)
-| plex         | [linuxserver/plex](https://docs.linuxserver.io/images/docker-plex)
+| portainer    | [portainer](https://docs.portainer.io/v/ce-2.11/start/install/server/docker)
+| jellyfin     | [linuxserver/jellyfin](https://docs.linuxserver.io/images/docker-jellyfin)
 | transmission | [linuxserver/transmission](https://docs.linuxserver.io/images/docker-transmission)
 | radarr       | [linuxserver/radarr](https://docs.linuxserver.io/images/docker-radarr)  
 | sonarr       | [linuxserver/sonarr](https://docs.linuxserver.io/images/docker-sonarr)
@@ -36,6 +36,8 @@ Pour corriger ça, mettez en place la configuration recommandée grâce aux lien
 Une fois que tous les services sont mis en place, vous pouvez lancer la stack grâce à ``docker-compose up -d``
 
 ⚠ Pour allumer et éteindre la stack, utilisez les commandes ``docker-compose start|stop``. *up* ne sert qu'à créer les conteneurs pour la première fois.
+
+⚠ Dans la dernière version de portainer, le port par défaut est 9443, ils l'ont changé pour utiliser une connexion sécurisée (https) , vous pouvez choisir de garder 9443 ou alors d'ouvrir le port 9000 (legacy) pour ne pas avoir de problème de certificat SSL.
 
 Rendez-vous ensuite sur l'interface portainer [localhost:9000](http://localhost:9000) pour confirmer le bon déploiement des conteneurs.
 
@@ -65,13 +67,15 @@ Une fois que l'indexeur est en place, rendez-vous dans la section *Download Clie
 
 Rendez-vous ensuite dans *Media management* pour rajouter les "Root Folders" /tv ou /movies que vous avez au préalable montés dans le Docker à l'aide d'un bind/volume.
 
-✨Voilà !✨ Vous n'avez maintenant plus qu'à ajouter des films et des séries et ils seront téléchargés et ajoutés à Plex automatiquement!
+✨Voilà !✨ Vous n'avez maintenant plus qu'à ajouter des films et des séries et ils seront téléchargés et ajoutés à Jellyfin automatiquement!
 
 ### Merci d'avoir suivi ce workshop ! J'espère qu'il vous à plu. Si c'est le cas n'hésitez pas à star le repo, ça fait toujours plaisir 😉
 
 ### Aller plus loin:
 - Explorer les paramètres de Sonarr et Radarr pour envoyer des notifications à votre téléphone quand un épisode est téléchargé
-- Changer les paramètres de Plex pour que la synchronisation s'effectue dans le contenu d'un "watched folder" change.
+- Changer les paramètres de Jellyfin pour que la synchronisation s'effectue dans le contenu d'un "watched folder" change.
+- Faire en sorte que Sonarr et Radarr téléchargent en priorité des médias de type H264 pour éviter les problèmes de compatibilité avec le navigateur et donc éviter le transcodage.
+- Créer un bot telegram / discord pour envoyer des notifications quand un épisode est téléchargé
 - Importer des lites de séries / movies à l'aide de la fonction "import list" et d'une liste Trakt
 - Intégrer un VPN à votre setup à l'aide de [wireguard](https://hub.docker.com/r/linuxserver/wireguard) pour pouvoir accéder à distance à Sonarr/Radarr.
 - Intéger transmission à votre navigateur: [addon chrome](https://chrome.google.com/webstore/detail/transmission-easy-client/cmkphjiphbjkffbcbnjiaidnjhahnned?hl=en)

@@ -1,8 +1,7 @@
-version: '2'
+version: '3'
 services:
 
   portainer:
-    container_name: portainer
     image: portainer/portainer-ce
 
   sonarr:
@@ -17,9 +16,9 @@ services:
     image: linuxserver/jackett
     container_name: jackett
 
-  plex:
-    image: linuxserver/plex
-    container_name: plex
+  jellyfin:
+    image: linuxserver/jellyfin
+    container_name: jellyfin
 
   transmission:
     image: linuxserver/transmission
